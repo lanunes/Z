@@ -1,0 +1,31 @@
+# Aborda alguns casos de Teste da Feature de Transferência do app do banco XYZ
+
+CT01 - Transferência realizada com sucesso
+Dado que eu acesse a feature de transferências do app do banco XYZ
+E preencha os campos Cliente Destino, valor e Data de Efetivação
+Quando clico no botão Transferir
+Então a operação é realizada com sucesso 
+E é exibida a mensagem de confirmação na tela.
+
+
+CT02 - Transferência cancelada
+Dado que eu acesse a feature de transferências do app do banco XYZ
+E preencha os campos Cliente Destino, valor e Data de Efetivação
+Quando Clico no botão Cancelar
+Então é exibida a mensagem de confirmação de cancelamento
+E não há alteração no saldo da conta.
+
+CT03 - Saldo Insuficiente para Transferência
+Dado que eu acesse a feature de transferências do app do banco XYZ
+E preencha os campos Cliente Destino, valor e Data de Efetivação
+E o saldo disponível for menor que o informado para a transferência
+Quando clico no botão transferir
+Então é exibida a mensagem de saldo insuficiente
+E a operação não é realizada
+
+CT04 - Cliente destino não encontrado
+Dado que eu acesse a feature de transferências do app do banco XYZ
+E preencha os campos Cliente Destino com algum dado incompleto e/ou incorreto, valor e Data de Efetivação
+Quando clico no botão transferir
+Então é exibida a mensagem de Cliente Destino com dados incorretos e/ou incompletos
+E a operação não é realizada
